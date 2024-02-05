@@ -18,7 +18,7 @@ Here is an example:
 ---
 language: html
 filename: 
-line_numbers: 
+line_numbers: false
 line_number_start: 
 line_highlights:
 ---
