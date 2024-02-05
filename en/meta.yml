@@ -1,11 +1,9 @@
-title: default-project-template
+title: Lazy-loading images
 hero_image: images/banner.png
-description: default-project-template description
+description: Lazy-loading images
 version: 4
 listed: false
 copyedit: false
-last_tested: "2022-05-19"
+last_tested: "2022 05 19"
 steps:
-  - title: Introduction
-  - title: Step title
-  - title: What next?
+    title: Lazy-loading images

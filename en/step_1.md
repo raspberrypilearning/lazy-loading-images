@@ -1,59 +1,60 @@
-## Introduction
+Images can have large file sizes. 
 
-Add project description here. What will learners be making? Broadly what skills will they be learning?
+When a web page loads, all images are loaded and this can use lots of bandwidth.
 
-### What you will make
+You can improve browser performance by only loading images when they are needed.
 
---- no-print ---
-Add instructions for interacting with the embedded content here.
+Here's how it works:
 
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
---- /no-print ---
+### Add a new attribute to each image element
 
---- print-only ---
-![Complete project](images/showcase_static.png)
---- /print-only ---
+In your HTML file(s) add a `data-src` attribute to each `<img>` element, and set the attribute value to the image file you want to load.
 
---- collapse ---
+Set the `src` attribute for each `<img>` element to a placeholder image file (or spinner animation/gif).
+
+Here is an example:
+
+--- code ---
 ---
-title: What you will need
----
-### Hardware
-
-+ A computer or tablet capable of running Scratch 3
-
-### Software
-
-+ Scratch 3 (either [online](https://scratch.mit.edu/){:target="_blank"} or [offline](https://scratch.mit.edu/download){:target="_blank"})
-+ Python 3
-+ This project can be completed in a web browser using [trinket.io](https://trinket.io/)
-
-### Downloads
-
-+ Download the project [starter file](https://rpf.io/p/en/projectName-go){:target="_blank"} if working offline
-
---- /collapse ---
-
---- collapse ---
----
-title: What you will learn
+language: html
+filename: 
+line_numbers: 
+line_number_start: 
+line_highlights:
 ---
 
-+ Learning objective 1
-+ Learning objective 2
-+ Learning objective 3
+<img src="spinner.gif" data-src="snail.svg" />
 
---- /collapse ---
+--- /code ---
 
---- collapse ---
+### Use intersection observer
+
+Create an JavaScript intersection observer to observe each image element and, if an image enters the viewport, change the value of its `src` attribute to the value of its `data-src` attribute (the image file you want to load). 
+
+You can use JavaScript to observe each `<img>` element.
+
+Here is an example from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More Web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
+
+--- code ---
 ---
-title: Additional information for educators
+language: js
+filename: 
+line_numbers: true
+line_number_start: 1
+line_highlights:
 ---
 
-You can download the completed project [here](https://rpf.io/p/en/projectName-get){:target="_blank"}.
+const lazyImages = document.querySelectorAll("img");
+const imageObserver = new IntersectionObserver((entries) => {
+  entries.forEach(
+    (entry) => {
+      if (entry.isIntersecting) {
+        entry.target.src = entry.target.getAttribute("data-src");
+        imageObserver.unobserve(entry.target);
+      }
+    }
+  );
+});
+lazyImages.forEach((lazyImage) => imageObserver.observe(lazyImage));
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/projectName/print){:target="_blank"}.
-
---- /collapse ---
+--- /code ---
