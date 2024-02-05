@@ -17,13 +17,9 @@ Here is an example:
 --- code ---
 ---
 language: html
-filename: 
-line_numbers: false
-line_number_start: 
-line_highlights:
 ---
 
-    <img src="spinner.gif" data-src="snail.svg" />
+<img src="spinner.gif" data-src="snail.svg" />
 
 --- /code ---
 
