@@ -4,9 +4,13 @@ When a web page loads, all images are loaded and this can use lots of bandwidth.
 
 You can improve browser performance by only loading images when they are needed.
 
-Here's how it works:
+Here's an example of lazy-loading images:
 
-### Add a new attribute to each image element
+![A gif showing images loading as the enter the browser's viewport](images/background-attachment-fixed.gif)
+
+Here is how this is done:
+
+**1 - Add a new attribute to each image element**
 
 In your HTML file(s) add a `data-src` attribute to each `<img>` element, and set the attribute value to the image file you want to load.
 
@@ -27,7 +31,7 @@ line_highlights:
 
 --- /code ---
 
-### Use intersection observer
+**2 - Use intersection observer**
 
 Create an JavaScript intersection observer to observe each image element and, if an image enters the viewport, change the value of its `src` attribute to the value of its `data-src` attribute (the image file you want to load). 
 
