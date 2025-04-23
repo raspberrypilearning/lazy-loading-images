@@ -2,11 +2,11 @@ Afbeeldingen kunnen grote bestandsgroottes hebben.
 
 Wanneer een webpagina wordt geladen, worden alle afbeeldingen geladen en dit kan veel bandbreedte gebruiken.
 
-Je kunt de prestaties van jouw browser verbeteren door afbeeldingen alleen te laden wanneer dat nodig is.
+Je kunt de prestaties van jouw browser verbeteren door afbeeldingen alleen te laden wanneer dat nodig is. Dit staat bekend als 'lazy loading'.
 
-Hier is een voorbeeld van het traag laden van afbeeldingen:
+Hier is een voorbeeld van het traag laden van een aantal afbeeldingen:
 
-![Een gif die afbeeldingen laat zien die worden geladen op het moment dat ze in de viewport van de browser verschijnen](images/background-attachment-fixed.gif)
+![Een gif die afbeeldingen laat zien die worden geladen op het moment dat ze in de viewport van de browser verschijnen.](images/background-attachment-fixed.gif)
 
 Dit is hoe het gedaan wordt:
 
@@ -31,9 +31,9 @@ line_highlights:
 
 --- /code ---
 
-**2 - Gebruik een intersection observator**
+**2 - Gebruik de intersection observator**
 
-Maak een JavaScript-intersectieobservator om elk afbeeldingselement te observeren en, als een afbeelding in de viewport verschijnt, de waarde van het `src`-kenmerk te wijzigen in de waarde van het `data-src`-kenmerk (het afbeeldingsbestand dat je wilt laden).
+Maak een JavaScript-intersectieobservator om elk afbeeldingselement te observeren en, als de afbeelding in de viewport verschijnt, de waarde van het `src`-kenmerk te wijzigen in de waarde van het `data-src`-kenmerk (het afbeeldingsbestand dat je wilt laden).
 
 Je kunt JavaScript gebruiken om elk `<img>` element te observeren.
 
