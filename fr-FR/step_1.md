@@ -1,18 +1,18 @@
 Les images peuvent avoir des tailles de fichier volumineuses.
 
-Quand une page web se charge, toutes les images sont chargées et cela peut utiliser beaucoup de bande passante.
+When a webpage loads, all the images are loaded and this can use lots of bandwidth.
 
-Tu peux améliorer les performances du navigateur en ne chargeant que les images quand elles sont nécessaires.
+You can improve browser performance by only loading images when they are needed. This is known as 'lazy loading'.
 
-Voici un exemple d'images à chargement à lent :
+Here's an example of some lazy loading images:
 
-![Un gif montrant des images en cours de chargement alors qu'elles entrent dans la fenêtre d'affichage du navigateur](images/background-attachment-fixed.gif)
+![A gif showing images loading as they enter the browser's viewport.](images/background-attachment-fixed.gif)
 
 Voici comment cela se fait :
 
 **1 - Ajouter un nouvel attribut à chaque élément d'image**
 
-Dans ton/tes fichier(s) HTML ajoute un attribut `data-src` à chaque élément `<img>`, et définis la valeur de l'attribut à l'image que tu veux charger.
+In your HTML file(s), add a `data-src` attribute to each `<img>` element, and set the attribute value to the image file you want to load.
 
 Définis l'attribut `src` pour chaque élément `<img>` à un fichier image (ou animation/gif).
 
@@ -31,13 +31,13 @@ line_highlights:
 
 \--- /code ---
 
-**2 - Utiliser l'Intersection Observer**
+**2 - Use the intersection observer**
 
-Crée un Intersection Observer JavaScript pour observer chaque élément de l'image et, si une image entre dans la fenêtre d'affichage, change la valeur de son attribut `src` à la valeur de son attribut `data-src` (le fichier image que tu veux charger).
+Create a JavaScript intersection observer to observe each image element and, when the image enters the viewport, change the value of its `src` attribute to the value of its `data-src` attribute (the image file you want to load).
 
 Tu peux utiliser JavaScript pour observer chaque élément `<img>`.
 
-Voici un exemple du projet [Histoire animée](https://projects.raspberrypi.org/en/projects/animated-story) dans le parcours [Plus de web](https://projects.raspberrypi.org/en/raspberrypi/more-web) :
+Here is an example from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
 
 ## --- code ---
 
