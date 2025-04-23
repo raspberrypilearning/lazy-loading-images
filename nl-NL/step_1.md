@@ -1,18 +1,18 @@
 Afbeeldingen kunnen grote bestandsgroottes hebben.
 
-Wanneer een webpagina wordt geladen, worden alle afbeeldingen geladen en dit kan veel bandbreedte gebruiken.
+When a webpage loads, all the images are loaded and this can use lots of bandwidth.
 
-Je kunt de prestaties van jouw browser verbeteren door afbeeldingen alleen te laden wanneer dat nodig is.
+You can improve browser performance by only loading images when they are needed. This is known as 'lazy loading'.
 
-Hier is een voorbeeld van het traag laden van afbeeldingen:
+Here's an example of some lazy loading images:
 
-![Een gif die afbeeldingen laat zien die worden geladen op het moment dat ze in de viewport van de browser verschijnen](images/background-attachment-fixed.gif)
+![A gif showing images loading as they enter the browser's viewport.](images/background-attachment-fixed.gif)
 
 Dit is hoe het gedaan wordt:
 
 **1 - Voeg een nieuw kenmerk toe aan elk afbeeldingselement**
 
-Voeg in je HTML-bestand(en) een `data-src`-kenmerk toe aan elk `<img>`-element en stel de kenmerkwaarde in op het afbeeldingsbestand dat je wilt laden.
+In your HTML file(s), add a `data-src` attribute to each `<img>` element, and set the attribute value to the image file you want to load.
 
 Stel het `src`-kenmerk voor elk `<img>`-element in op een tijdelijke afbeelding (of spinneranimatie/gif).
 
@@ -31,13 +31,13 @@ line_highlights:
 
 \--- /code ---
 
-**2 - Gebruik een intersection observator**
+**2 - Use the intersection observer**
 
-Maak een JavaScript-intersectieobservator om elk afbeeldingselement te observeren en, als een afbeelding in de viewport verschijnt, de waarde van het `src`-kenmerk te wijzigen in de waarde van het `data-src`-kenmerk (het afbeeldingsbestand dat je wilt laden).
+Create a JavaScript intersection observer to observe each image element and, when the image enters the viewport, change the value of its `src` attribute to the value of its `data-src` attribute (the image file you want to load).
 
 Je kunt JavaScript gebruiken om elk `<img>` element te observeren.
 
-Hier is een voorbeeld van het project [Geanimeerd verhaal](https://projects.raspberrypi.org/en/projects/animated-story) in het pad [Meer web](https://projects.raspberrypi.org/en/raspberrypi/more-web):
+Here is an example from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
 
 ## --- code ---
 
