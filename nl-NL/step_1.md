@@ -1,18 +1,18 @@
 Afbeeldingen kunnen grote bestandsgroottes hebben.
 
-When a webpage loads, all the images are loaded and this can use lots of bandwidth.
+Wanneer een webpagina wordt geladen, worden alle afbeeldingen geladen en dit kan veel bandbreedte gebruiken.
 
-You can improve browser performance by only loading images when they are needed. This is known as 'lazy loading'.
+Je kunt de prestaties van jouw browser verbeteren door afbeeldingen alleen te laden wanneer dat nodig is. Dit staat bekend als 'lazy loading'.
 
-Here's an example of some lazy loading images:
+Hier is een voorbeeld van het traag laden van een aantal afbeeldingen:
 
-![A gif showing images loading as they enter the browser's viewport.](images/background-attachment-fixed.gif)
+![Een gif die afbeeldingen laat zien die worden geladen op het moment dat ze in de viewport van de browser verschijnen.](images/background-attachment-fixed.gif)
 
 Dit is hoe het gedaan wordt:
 
 **1 - Voeg een nieuw kenmerk toe aan elk afbeeldingselement**
 
-In your HTML file(s), add a `data-src` attribute to each `<img>` element, and set the attribute value to the image file you want to load.
+Voeg in je HTML-bestand(en) een `data-src`-kenmerk toe aan elk `<img>`-element en stel de kenmerkwaarde in op het afbeeldingsbestand dat je wilt laden.
 
 Stel het `src`-kenmerk voor elk `<img>`-element in op een tijdelijke afbeelding (of spinneranimatie/gif).
 
@@ -31,13 +31,13 @@ line_highlights:
 
 \--- /code ---
 
-**2 - Use the intersection observer**
+**2 - Gebruik de intersection observator**
 
-Create a JavaScript intersection observer to observe each image element and, when the image enters the viewport, change the value of its `src` attribute to the value of its `data-src` attribute (the image file you want to load).
+Maak een JavaScript-intersectieobservator om elk afbeeldingselement te observeren en, als de afbeelding in de viewport verschijnt, de waarde van het `src`-kenmerk te wijzigen in de waarde van het `data-src`-kenmerk (het afbeeldingsbestand dat je wilt laden).
 
 Je kunt JavaScript gebruiken om elk `<img>` element te observeren.
 
-Here is an example from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
+Hier is een voorbeeld van het project [Geanimeerd verhaal](https://projects.raspberrypi.org/en/projects/animated-story) in het pad [Meer web](https://projects.raspberrypi.org/en/raspberrypi/more-web):
 
 ## --- code ---
 
