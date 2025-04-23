@@ -1,22 +1,22 @@
-Images can have large file sizes.
+Les images peuvent avoir des tailles de fichier volumineuses.
 
-When a web page loads, all images are loaded and this can use lots of bandwidth.
+Quand une page web se charge, toutes les images sont chargées et cela peut utiliser beaucoup de bande passante.
 
-You can improve browser performance by only loading images when they are needed.
+Tu peux améliorer les performances du navigateur en ne chargeant que les images quand elles sont nécessaires.
 
-Here's an example of lazy-loading images:
+Voici un exemple d'images à chargement à lent :
 
-![A gif showing images loading as the enter the browser's viewport](images/background-attachment-fixed.gif)
+![Un gif montrant des images en cours de chargement alors qu'elles entrent dans la fenêtre d'affichage du navigateur](images/background-attachment-fixed.gif)
 
-Here is how this is done:
+Voici comment cela se fait :
 
-**1 - Add a new attribute to each image element**
+**1 - Ajouter un nouvel attribut à chaque élément d'image**
 
-In your HTML file(s) add a `data-src` attribute to each `<img>` element, and set the attribute value to the image file you want to load.
+Dans ton/tes fichier(s) HTML ajoute un attribut `data-src` à chaque élément `<img>`, et définis la valeur de l'attribut à l'image que tu veux charger.
 
-Set the `src` attribute for each `<img>` element to a placeholder image file (or spinner animation/gif).
+Définis l'attribut `src` pour chaque élément `<img>` à un fichier image (ou animation/gif).
 
-Here is an example:
+Voici un exemple :
 
 ## --- code ---
 
@@ -31,13 +31,13 @@ line_highlights:
 
 \--- /code ---
 
-**2 - Use intersection observer**
+**2 - Utiliser l'Intersection Observer**
 
-Create an JavaScript intersection observer to observe each image element and, if an image enters the viewport, change the value of its `src` attribute to the value of its `data-src` attribute (the image file you want to load).
+Crée un Intersection Observer JavaScript pour observer chaque élément de l'image et, si une image entre dans la fenêtre d'affichage, change la valeur de son attribut `src` à la valeur de son attribut `data-src` (le fichier image que tu veux charger).
 
-You can use JavaScript to observe each `<img>` element.
+Tu peux utiliser JavaScript pour observer chaque élément `<img>`.
 
-Here is an example from the [Animated story](https://projects.raspberrypi.org/en/projects/animated-story) project in the [More Web](https://projects.raspberrypi.org/en/raspberrypi/more-web) path:
+Voici un exemple du projet [Histoire animée](https://projects.raspberrypi.org/en/projects/animated-story) dans le parcours [Plus de web](https://projects.raspberrypi.org/en/raspberrypi/more-web) :
 
 ## --- code ---
 
